@@ -231,121 +231,8 @@ static rateStr2rateIndex_t rateName_rateIndex_tbl[] =
    { HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_90_MBPS,  "MCS_CB_90_MBPS"},
    { HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_120_MBPS, "MCS_CB_120_MBPS"},
    { HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_135_MBPS, "MCS_CB_135_MBPS"},
-   { HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_150_MBPS, "MCS_CB_150_MBPS"},
+   { HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_150_MBPS, "MCS_CB_150_MBPS"}
 
-#ifdef WLAN_FEATURE_11AC
-    /*11AC rate 20MHZ Normal GI*/
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_6_5_MBPS, "MCS_VHT20_NGI_6_5_MBPS"},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_13_MBPS,  "MCS_VHT20_NGI_13_MBPS"},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_19_5_MBPS,"MCS_VHT20_NGI_19_5_MBPS"},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_26_MBPS,  "MCS_VHT20_NGI_26_MBPS"},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_39_MBPS,  "MCS_VHT20_NGI_39_MBPS"},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_52_MBPS,  "MCS_VHT20_NGI_52_MBPS"},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_58_5_MBPS,"MCS_VHT20_NGI_58_5_MBPS"},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_65_MBPS,  "MCS_VHT20_NGI_65_MBPS"},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_78_MBPS,  "MCS_VHT20_NGI_78_MBPS"},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_86_5_MBPS,"MCS_VHT20_NGI_86_5_MBPS"},
-
-    /*11AC rate 20MHZ Short GI*/
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_7_2_MBPS, "MCS_VHT20_SGI_7_2_MBPS"},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_14_4_MBPS,"MCS_VHT20_SGI_14_4_MBPS"},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_21_6_MBPS,"MCS_VHT20_SGI_21_6_MBPS"},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_28_8_MBPS,"MCS_VHT20_SGI_28_8_MBPS"},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_43_3_MBPS,"MCS_VHT20_SGI_43_3_MBPS"},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_57_7_MBPS,"MCS_VHT20_SGI_57_7_MBPS"},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_65_MBPS,  "MCS_VHT20_SGI_65_MBPS"},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_72_2_MBPS,"MCS_VHT20_SGI_72_2_MBPS"},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_86_6_MBPS,"MCS_VHT20_SGI_86_6_MBPS"},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_96_1_MBPS,"MCS_VHT20_SGI_96_1_MBPS"},
-
-    /*11AC rates 40MHZ normal GI*/
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_13_5_MBPS,
-       "MCS_VHT40_NGI_CB_13_5_MBPS"},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_27_MBPS,
-       "MCS_VHT40_NGI_CB_27_MBPS"},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_40_5_MBPS,
-       "MCS_VHT40_NGI_CB_40_5_MBPS"},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_54_MBPS,
-       "MCS_VHT40_NGI_CB_54_MBPS"},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_81_MBPS,
-       "MCS_VHT40_NGI_CB_81_MBPS"},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_108_MBPS,
-       "MCS_VHT40_NGI_CB_108_MBPS"},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_121_5_MBPS,
-       "MCS_VHT40_NGI_CB_121_5_MBPS"},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_135_MBPS,
-       "MCS_VHT40_NGI_CB_135_MBPS"},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_162_MBPS,
-       "MCS_VHT40_NGI_CB_162_MBPS"},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_180_MBPS,
-       "MCS_VHT40_NGI_CB_180_MBPS"},
-
-    /*11AC rates 40MHZ short GI*/
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_15_MBPS,
-       "MCS_VHT40_SGI_CB_15_MBPS"},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_30_MBPS,
-       "MCS_VHT40_SGI_CB_30_MBPS"},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_45_MBPS,
-       "MCS_VHT40_SGI_CB_45_MBPS"},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_60_MBPS,
-       "MCS_VHT40_SGI_CB_60_MBPS"},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_90_MBPS,
-       "MCS_VHT40_SGI_CB_90_MBPS"},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_120_MBPS,
-       "MCS_VHT40_SGI_CB_120_MBPS"},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_135_MBPS,
-       "MCS_VHT40_SGI_CB_135_MBPS"},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_150_MBPS,
-       "MCS_VHT40_SGI_CB_150_MBPS"},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_180_MBPS,
-       "MCS_VHT40_SGI_CB_180_MBPS"},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_200_MBPS,
-       "MCS_VHT40_SGI_CB_200_MBPS"},
-
-    /*11AC rates 80 MHZ normal GI*/
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_29_3_MBPS,
-       "MCS_VHT80_NGI_CB_29_3_MBPS"},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_58_5_MBPS,
-       "MCS_VHT80_NGI_CB_58_5_MBPS"},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_87_8_MBPS,
-       "MCS_VHT80_NGI_CB_87_8_MBPS"},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_117_MBPS,
-       "MCS_VHT80_NGI_CB_117_MBPS"},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_175_5_MBPS,
-       "MCS_VHT80_NGI_CB_175_5_MBPS"},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_234_MBPS,
-       "MCS_VHT80_NGI_CB_234_MBPS"},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_263_3_MBPS,
-       "MCS_VHT80_NGI_CB_263_3_MBPS"},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_292_5_MBPS,
-       "MCS_VHT80_NGI_CB_292_5_MBPS"},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_351_MBPS,
-       "MCS_VHT80_NGI_CB_351_MBPS"},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_390_MBPS,
-       "MCS_VHT80_NGI_CB_390_MBPS"},
-
-    /*11AC rates 80 MHZ short GI*/
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_32_5_MBPS,
-       "MCS_VHT80_SGI_CB_32_5_MBPS"},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_65_MBPS,
-       "MCS_VHT80_SGI_CB_65_MBPS"},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_97_5_MBPS,
-       "MCS_VHT80_SGI_CB_97_5_MBPS"},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_130_MBPS,
-       "MCS_VHT80_SGI_CB_130_MBPS"},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_195_MBPS,
-       "MCS_VHT80_SGI_CB_195_MBPS"},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_260_MBPS,
-       "MCS_VHT80_SGI_CB_260_MBPS"},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_292_5_MBPS,
-       "MCS_VHT80_SGI_CB_292_5_MBPS"},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_325_MBPS,
-       "MCS_VHT80_SGI_CB_325_MBPS"},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_390_MBPS,
-       "MCS_VHT80_SGI_CB_390_MBPS"},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_433_3_MBPS,
-       "MCS_VHT80_SGI_CB_433_3_MBPS"},
-#endif
 };
 
 static rateIndex2Preamble_t rate_index_2_preamble_table[] =
@@ -414,81 +301,8 @@ static rateIndex2Preamble_t rate_index_2_preamble_table[] =
    { HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_90_MBPS, PHYDBG_PREAMBLE_MIXED},
    { HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_120_MBPS, PHYDBG_PREAMBLE_MIXED},
    { HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_135_MBPS, PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_150_MBPS, PHYDBG_PREAMBLE_MIXED},
+   { HAL_PHY_RATE_MCS_1NSS_MM_SG_CB_150_MBPS, PHYDBG_PREAMBLE_MIXED}
 
-#ifdef WLAN_FEATURE_11AC
-    /*11AC rate 20MHZ Normal GI*/
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_6_5_MBPS, PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_13_MBPS,  PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_19_5_MBPS,PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_26_MBPS,  PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_39_MBPS,  PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_52_MBPS,  PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_58_5_MBPS,PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_65_MBPS,  PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_78_MBPS,  PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_NGI_86_5_MBPS,PHYDBG_PREAMBLE_MIXED},
-
-    /*11AC rate 20MHZ Short GI*/
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_7_2_MBPS, PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_14_4_MBPS,PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_21_6_MBPS,PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_28_8_MBPS,PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_43_3_MBPS,PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_57_7_MBPS,PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_65_MBPS,  PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_72_2_MBPS,PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_86_6_MBPS,PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_20MHZ_MCS_1NSS_SGI_96_1_MBPS,PHYDBG_PREAMBLE_MIXED},
-
-    /*11AC rates 40MHZ normal GI*/
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_13_5_MBPS, PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_27_MBPS,   PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_40_5_MBPS, PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_54_MBPS,   PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_81_MBPS,   PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_108_MBPS,  PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_121_5_MBPS,PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_135_MBPS,  PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_162_MBPS,  PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_NGI_180_MBPS,  PHYDBG_PREAMBLE_MIXED},
-
-    /*11AC rates 40MHZ short GI*/
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_15_MBPS, PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_30_MBPS, PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_45_MBPS, PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_60_MBPS, PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_90_MBPS, PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_120_MBPS,PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_135_MBPS,PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_150_MBPS,PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_180_MBPS,PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_40MHZ_MCS_1NSS_CB_SGI_200_MBPS,PHYDBG_PREAMBLE_MIXED},
-
-    /*11AC rates 80 MHZ normal GI*/
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_29_3_MBPS, PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_58_5_MBPS, PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_87_8_MBPS, PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_117_MBPS,  PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_175_5_MBPS,PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_234_MBPS,  PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_263_3_MBPS,PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_292_5_MBPS,PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_351_MBPS,  PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_NGI_390_MBPS,  PHYDBG_PREAMBLE_MIXED},
-
-    /*11AC rates 80 MHZ short GI*/
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_32_5_MBPS, PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_65_MBPS,   PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_97_5_MBPS, PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_130_MBPS,  PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_195_MBPS,  PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_260_MBPS,  PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_292_5_MBPS,PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_325_MBPS,  PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_390_MBPS,  PHYDBG_PREAMBLE_MIXED},
-   { HAL_PHY_RATE_VHT_80MHZ_MCS_1NSS_CB_SGI_433_3_MBPS,PHYDBG_PREAMBLE_MIXED},
-#endif
 };
 
 static unsigned int valid_channel[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
@@ -1203,13 +1017,8 @@ VOS_STATUS vos_ftm_preStart( v_CONTEXT_t vosContext )
    VOS_TRACE(VOS_MODULE_ID_SYS, VOS_TRACE_LEVEL_INFO,
              "vos prestart");
 
-   if (NULL == pVosContext->pWDAContext)
-   {
-      VOS_ASSERT(0);
-      VOS_TRACE(VOS_MODULE_ID_SYS, VOS_TRACE_LEVEL_ERROR,
-            "%s: WDA NULL context", __func__);
-      return VOS_STATUS_E_FAILURE;
-   }
+
+   VOS_ASSERT( NULL != pVosContext->pWDAContext);
 
    /* call macPreStart */
    vStatus = macPreStart(pVosContext->pMACContext);
@@ -1590,7 +1399,7 @@ static int wlan_hdd_ftm_start(hdd_context_t *pHddCtx)
                     "%s: WDA_NVDownload_Start reporting  other error \n",__func__);
        }
        VOS_ASSERT(0);
-       goto err_status_failure;
+       goto err_wda_stop;
     }
 
     vStatus = WDA_start(pVosContext);
@@ -1697,7 +1506,6 @@ static int wlan_ftm_stop(hdd_context_t *pHddCtx)
 
   \brief wlan_hdd_ftm_get_nv_table() -
             Get Specific NV table
-            NV V2 dedicated API
 
   \param  - ftmCmd - Pointer FTM Commad Buffer
 
@@ -1715,21 +1523,13 @@ int wlan_hdd_ftm_get_nv_table
    VOS_STATUS          nvStatus = VOS_STATUS_SUCCESS;
    pttGetNvTable      *nvTable = (pttGetNvTable *)&ftmCmd->msgBody.GetNvTable;
    v_SIZE_t            nvSize;
-   sHalNvV2           *nvContents = NULL;
-   eNvVersionType      nvVersion;
+   sHalNv             *nvContents = NULL;
+
 
    if (NULL == pHddCtx)
    {
       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_FATAL,
                 "Not valid driver context");
-      return -EINVAL;
-   }
-
-   nvVersion = vos_nv_getNvVersion();
-   if (E_NV_V2 != nvVersion)
-   {
-      VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_FATAL,
-                "%s : Not valid NV Version %d", __func__, nvVersion);
       return -EINVAL;
    }
 
@@ -1869,7 +1669,6 @@ int wlan_hdd_ftm_get_nv_table
 
   \brief wlan_hdd_ftm_set_nv_table() -
             Set Specific NV table as given
-            NV V2 dedicated API
 
   \param  - ftmCmd - Pointer FTM Commad Buffer
 
@@ -1887,21 +1686,12 @@ int wlan_hdd_ftm_set_nv_table
    VOS_STATUS          nvStatus = VOS_STATUS_SUCCESS;
    pttSetNvTable      *nvTable = (pttSetNvTable *)&ftmCmd->msgBody.SetNvTable;
    v_SIZE_t            nvSize;
-   sHalNvV2           *nvContents = NULL;
-   eNvVersionType      nvVersion;
+   sHalNv             *nvContents = NULL;
 
    if (NULL == pHddCtx)
    {
       VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_FATAL,
                 "Not valid driver context");
-      return -EINVAL;
-   }
-
-   nvVersion = vos_nv_getNvVersion();
-   if (E_NV_V2 != nvVersion)
-   {
-      VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_FATAL,
-                "%s : Not valid NV Version %d", __func__, nvVersion);
       return -EINVAL;
    }
 
@@ -2029,7 +1819,6 @@ int wlan_hdd_ftm_set_nv_table
 
   \brief wlan_hdd_ftm_blank_nv() -
             Set all NV table value as default
-            NV V2 dedicated API
 
   \param  - ftmCmd - Pointer FTM Commad Buffer
 
@@ -2043,11 +1832,10 @@ int wlan_hdd_ftm_blank_nv_table
    tPttMsgbuffer  *ftmCmd
 )
 {
-   VOS_STATUS          nvStatus = VOS_STATUS_SUCCESS;
+   VOS_STATUS      nvStatus = VOS_STATUS_SUCCESS;
    v_SIZE_t            nvSize;
    v_SIZE_t            itemSize;
-   sHalNvV2           *nvContents = NULL;
-   eNvVersionType      nvVersion;
+   sHalNv             *nvContents = NULL;
 
    nvStatus = vos_nv_getNVBuffer((void **)&nvContents, &nvSize);
    if((VOS_STATUS_SUCCESS != nvStatus) || (NULL == nvContents))
@@ -2057,62 +1845,54 @@ int wlan_hdd_ftm_blank_nv_table
       return -EIO;
    }
 
-   nvVersion = vos_nv_getNvVersion();
-   if (E_NV_V2 != nvVersion)
-   {
-      VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_FATAL,
-                "%s : Not valid NV Version %d", __func__, nvVersion);
-      return -EINVAL;
-   }
-
    itemSize = sizeof(nvContents->tables.pwrOptimum);
    memcpy(&nvContents->tables.pwrOptimum,
-          &nvDefaultsV2.tables.pwrOptimum,
+          &nvDefaults.tables.pwrOptimum,
           itemSize);
 
    itemSize = sizeof(nvContents->tables.regDomains);
    memcpy(&nvContents->tables.regDomains,
-          &nvDefaultsV2.tables.regDomains,
+          &nvDefaults.tables.regDomains,
           itemSize);
 
    itemSize = sizeof(nvContents->tables.defaultCountryTable);
    memcpy(&nvContents->tables.defaultCountryTable,
-          &nvDefaultsV2.tables.defaultCountryTable,
+          &nvDefaults.tables.defaultCountryTable,
           itemSize);
 
    itemSize = sizeof(nvContents->tables.plutCharacterized);
    memcpy(&nvContents->tables.plutCharacterized[0],
-          &nvDefaultsV2.tables.plutCharacterized[0],
+          &nvDefaults.tables.plutCharacterized[0],
           itemSize);
 
    itemSize = sizeof(nvContents->tables.plutPdadcOffset);
    memcpy(&nvContents->tables.plutPdadcOffset[0],
-          &nvDefaultsV2.tables.plutPdadcOffset[0],
+          &nvDefaults.tables.plutPdadcOffset[0],
           itemSize);
 
    itemSize = sizeof(nvContents->tables.pwrOptimum_virtualRate);
    memcpy(&nvContents->tables.pwrOptimum_virtualRate[0],
-          &nvDefaultsV2.tables.pwrOptimum_virtualRate[0],
+          &nvDefaults.tables.pwrOptimum_virtualRate[0],
           itemSize);
 
    itemSize = sizeof(nvContents->tables.rssiChanOffsets);
    memcpy(&nvContents->tables.rssiChanOffsets[0],
-          &nvDefaultsV2.tables.rssiChanOffsets[0],
+          &nvDefaults.tables.rssiChanOffsets[0],
           itemSize);
 
    itemSize = sizeof(nvContents->tables.hwCalValues);
    memcpy(&nvContents->tables.hwCalValues,
-          &nvDefaultsV2.tables.hwCalValues,
+          &nvDefaults.tables.hwCalValues,
           itemSize);
 
    itemSize = sizeof(nvContents->tables.antennaPathLoss);
    memcpy(&nvContents->tables.antennaPathLoss[0],
-          &nvDefaultsV2.tables.antennaPathLoss[0],
+          &nvDefaults.tables.antennaPathLoss[0],
           itemSize);
 
    itemSize = sizeof(nvContents->tables.pktTypePwrLimits);
    memcpy(&nvContents->tables.pktTypePwrLimits[0][0],
-          &nvDefaultsV2.tables.pktTypePwrLimits[0][0],
+          &nvDefaults.tables.pktTypePwrLimits[0][0],
           itemSize);
 
    return 1;
@@ -2122,7 +1902,6 @@ int wlan_hdd_ftm_blank_nv_table
 
   \brief wlan_hdd_ftm_delete_nv_table() -
             Delete Specific NV table
-            NV V2 dedicated API
 
   \param  - ftmCmd - Pointer FTM Commad Buffer
 
@@ -2136,12 +1915,11 @@ int wlan_hdd_ftm_delete_nv_table
    tPttMsgbuffer  *ftmCmd
 )
 {
-   VOS_STATUS          nvStatus = VOS_STATUS_SUCCESS;
+   VOS_STATUS      nvStatus = VOS_STATUS_SUCCESS;
    tMsgPttDelNvTable  *nvTable = (tMsgPttDelNvTable *)&ftmCmd->msgBody.DelNvTable;
    v_SIZE_t            nvSize;
    v_SIZE_t            itemSize;
-   sHalNvV2           *nvContents = NULL;
-   eNvVersionType      nvVersion;
+   sHalNv             *nvContents = NULL;
 
    nvStatus = vos_nv_getNVBuffer((void **)&nvContents, &nvSize);
    if ((VOS_STATUS_SUCCESS != nvStatus) || (NULL == nvContents))
@@ -2151,90 +1929,82 @@ int wlan_hdd_ftm_delete_nv_table
       return -EIO;
    }
 
-   nvVersion = vos_nv_getNvVersion();
-   if (E_NV_V2 != nvVersion)
-   {
-      VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_FATAL,
-                "%s : Not valid NV Version %d", __func__, nvVersion);
-      return -EINVAL;
-   }
-
    switch (nvTable->nvTable)
    {
       case NV_TABLE_RATE_POWER_SETTINGS:
          itemSize = sizeof(nvContents->tables.pwrOptimum);
          memcpy(&nvContents->tables.pwrOptimum,
-                &nvDefaultsV2.tables.pwrOptimum,
+                &nvDefaults.tables.pwrOptimum,
                 itemSize);
          break;
 
       case NV_TABLE_REGULATORY_DOMAINS:
          itemSize = sizeof(nvContents->tables.regDomains);
          memcpy(&nvContents->tables.regDomains,
-                &nvDefaultsV2.tables.regDomains,
+                &nvDefaults.tables.regDomains,
                 itemSize);
          break;
 
       case NV_TABLE_DEFAULT_COUNTRY:
          itemSize = sizeof(nvContents->tables.defaultCountryTable);
          memcpy(&nvContents->tables.defaultCountryTable,
-                &nvDefaultsV2.tables.defaultCountryTable,
+                &nvDefaults.tables.defaultCountryTable,
                 itemSize);
          break;
 
       case NV_TABLE_TPC_POWER_TABLE:
          itemSize = sizeof(nvContents->tables.plutCharacterized);
          memcpy(&nvContents->tables.plutCharacterized[0],
-                &nvDefaultsV2.tables.plutCharacterized[0],
+                &nvDefaults.tables.plutCharacterized[0],
                 itemSize);
          break;
 
       case NV_TABLE_TPC_PDADC_OFFSETS:
          itemSize = sizeof(nvContents->tables.plutPdadcOffset);
          memcpy(&nvContents->tables.plutPdadcOffset[0],
-                &nvDefaultsV2.tables.plutPdadcOffset[0],
+                &nvDefaults.tables.plutPdadcOffset[0],
                 itemSize);
          break;
 
       case NV_TABLE_VIRTUAL_RATE:
          itemSize = sizeof(nvContents->tables.pwrOptimum_virtualRate);
          memcpy(&nvContents->tables.pwrOptimum_virtualRate[0],
-                &nvDefaultsV2.tables.pwrOptimum_virtualRate[0],
+                &nvDefaults.tables.pwrOptimum_virtualRate[0],
                 itemSize);
          break;
 
       case NV_TABLE_RSSI_CHANNEL_OFFSETS:
          itemSize = sizeof(nvContents->tables.rssiChanOffsets);
          memcpy(&nvContents->tables.rssiChanOffsets[0],
-                &nvDefaultsV2.tables.rssiChanOffsets[0],
+                &nvDefaults.tables.rssiChanOffsets[0],
                 itemSize);
          break;
 
       case NV_TABLE_HW_CAL_VALUES:
          itemSize = sizeof(nvContents->tables.hwCalValues);
          memcpy(&nvContents->tables.hwCalValues,
-                &nvDefaultsV2.tables.hwCalValues,
+                &nvDefaults.tables.hwCalValues,
                 itemSize);
          break;
 
       case NV_TABLE_FW_CONFIG:
          itemSize = sizeof(nvContents->tables.fwConfig);
          memcpy(&nvContents->tables.fwConfig,
-                &nvDefaultsV2.tables.fwConfig,
+                &nvDefaults.tables.fwConfig,
                 itemSize);
          break;
 
       case NV_TABLE_ANTENNA_PATH_LOSS:
          itemSize = sizeof(nvContents->tables.antennaPathLoss);
          memcpy(&nvContents->tables.antennaPathLoss[0],
-                &nvDefaultsV2.tables.antennaPathLoss[0],
+                &nvDefaults.tables.antennaPathLoss[0],
                 itemSize);
          break;
 
       case NV_TABLE_PACKET_TYPE_POWER_LIMITS:
          itemSize = sizeof(nvContents->tables.pktTypePwrLimits);
          memcpy(&nvContents->tables.pktTypePwrLimits[0][0],
-                &nvDefaultsV2.tables.pktTypePwrLimits[0][0],
+                &nvDefaults.tables.pktTypePwrLimits[0][0],
                 itemSize);
          break;
 
@@ -2481,7 +2251,6 @@ int wlan_hdd_ftm_set_nv_field
 
   \brief wlan_hdd_ftm_store_nv_table() -
             Store Cached NV information into Flash Memory, file
-            NV V2 dedicated API
 
   \param  - ftmCmd - Pointer FTM Commad Buffer
 
@@ -2497,25 +2266,16 @@ int wlan_hdd_ftm_store_nv_table
 {
    VOS_STATUS           nvStatus = VOS_STATUS_SUCCESS;
    v_SIZE_t             nvSize;
+   sHalNv              *nvContents = NULL;
    tMsgPttStoreNvTable *nvTable = (tMsgPttStoreNvTable *)&ftmCmd->msgBody.StoreNvTable;
    void                *tablePtr = NULL;
    unsigned int         tableSize = 0;
    VNV_TYPE             tableVNVType = VNV_FIELD_IMAGE;
-   sHalNvV2            *nvContents = NULL;
-   eNvVersionType       nvVersion;
 
    nvStatus = vos_nv_getNVBuffer((void **)&nvContents, &nvSize);
    if((VOS_STATUS_SUCCESS != nvStatus) || (NULL == nvContents))
    {
       return -EIO;
-   }
-
-   nvVersion = vos_nv_getNvVersion();
-   if (E_NV_V2 != nvVersion)
-   {
-      VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_FATAL,
-                "%s : Not valid NV Version %d", __func__, nvVersion);
-      return -EINVAL;
    }
 
    /* Set Platform type as PRIMA */
@@ -2637,15 +2397,7 @@ static int wlan_hdd_ftm_get_nv_bin
    v_SIZE_t            nvSize;
    v_U8_t             *nvContents;
    v_U16_t offset = 0;
-   eNvVersionType      nvVersion;
 
-   nvVersion = vos_nv_getNvVersion();
-   if (E_NV_V3 != nvVersion)
-   {
-      VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_FATAL,
-                "%s : Not valid NV Version %d", __func__, nvVersion);
-      return -EINVAL;
-   }
 
    if ((NV_MAX_TABLE == pHddCtx->ftm.processingNVTable) ||
       (0 == pHddCtx->ftm.processedNVTableSize))
@@ -2769,16 +2521,6 @@ static int wlan_hdd_ftm_set_nv_bin
 {
    VOS_STATUS          nvStatus = VOS_STATUS_SUCCESS;
    pttSetNvTable      *nvTable = (pttSetNvTable *)&ftmCmd->msgBody.SetNvBin;
-   eNvVersionType      nvVersion;
-
-   nvVersion = vos_nv_getNvVersion();
-   if (E_NV_V3 != nvVersion)
-   {
-      VOS_TRACE(VOS_MODULE_ID_VOSS, VOS_TRACE_LEVEL_FATAL,
-                "%s : Not valid NV Version %d", __func__, nvVersion);
-      return -EINVAL;
-   }
-
 
    /* Test first chunk of NV table */
    if ((NV_MAX_TABLE == pHddCtx->ftm.processingNVTable) ||
@@ -3299,41 +3041,6 @@ static VOS_STATUS validate_channel(unsigned int channel,unsigned int cb)
 }
 
 
-static unsigned int get_primary_channel(unsigned int center_channel,unsigned int cb)
-{
-    unsigned int primary_channel = center_channel;
-
-        if (center_channel <= 14)
-                return primary_channel ;
-
-    switch (cb)
-    {
-        case PHY_DOUBLE_CHANNEL_LOW_PRIMARY:
-                case PHY_QUADRUPLE_CHANNEL_20MHZ_LOW_40MHZ_CENTERED:
-                case PHY_QUADRUPLE_CHANNEL_20MHZ_HIGH_40MHZ_LOW:
-            primary_channel -= 2;
-            break;
-
-
-        case PHY_DOUBLE_CHANNEL_HIGH_PRIMARY:
-                case PHY_QUADRUPLE_CHANNEL_20MHZ_HIGH_40MHZ_CENTERED:
-                case PHY_QUADRUPLE_CHANNEL_20MHZ_LOW_40MHZ_HIGH:
-                        primary_channel += 2;
-                        break;
-
-                case PHY_QUADRUPLE_CHANNEL_20MHZ_LOW_40MHZ_LOW:
-                        primary_channel -= 6;
-                        break;
-
-                case PHY_QUADRUPLE_CHANNEL_20MHZ_HIGH_40MHZ_HIGH:
-                        primary_channel += 6;
-                        break;
-        }
-
-        return primary_channel;
-
-}
-
 /**---------------------------------------------------------------------------
 
   \brief wlan_ftm_priv_set_channel() -
@@ -3374,7 +3081,7 @@ static VOS_STATUS wlan_ftm_priv_set_channel(hdd_adapter_t *pAdapter,v_U16_t chan
 
     pMsgBody = &pMsgBuf->msgBody;
 
-    pMsgBody->SetChannel.chId = get_primary_channel(channel, ftm_status.cbmode);
+    pMsgBody->SetChannel.chId = channel;
 
     VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "Channel =%d\n",pMsgBody->SetChannel.chId);
     pMsgBody->SetChannel.cbState = ftm_status.cbmode ;
@@ -4480,15 +4187,9 @@ static VOS_STATUS wlan_ftm_priv_set_mac_address(hdd_adapter_t *pAdapter,char *bu
     pMsgBody->SetNvField.nvField = NV_COMMON_MAC_ADDR;
 
     /*We get the mac address in string format "XX:XX:XX:XX:XX:XX" convert to hex*/
-    if (6 != sscanf(buf,"%02x:%02x:%02x:%02x:%02x:%02x",&macAddr[0],(int*)&macAddr[1],(int*)&macAddr[2],(int*)&macAddr[3],(int*)&macAddr[4],(int*)&macAddr[5]))
-    {
-       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_ERROR,
-                 "Invalid MacAddress Input %s", buf);
-       return VOS_STATUS_E_FAILURE;
-    }
+    sscanf(buf,"%02x:%02x:%02x:%02x:%02x:%02x",&macAddr[0],(int*)&macAddr[1],(int*)&macAddr[2],(int*)&macAddr[3],(int*)&macAddr[4],(int*)&macAddr[5]);
 
-    VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH,
-              "MacAddress = " MAC_ADDRESS_STR, MAC_ADDR_ARRAY(macAddr));
+    VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "MacAddress = %02x:%02x:%02x:%02x:%02x:%02x",MAC_ADDR_ARRAY(macAddr));
 
 
     pMacAddress = &pMsgBody->SetNvField.fieldData.macAddr.macAddr1[0];
@@ -4497,8 +4198,7 @@ static VOS_STATUS wlan_ftm_priv_set_mac_address(hdd_adapter_t *pAdapter,char *bu
        pMacAddress[ii] = (v_U8_t)macAddr[ii];
 
 
-    VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH,
-              "pMacAddress = " MAC_ADDRESS_STR, MAC_ADDR_ARRAY(pMacAddress));
+    VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO_HIGH, "pMacAddress = %02x:%02x:%02x:%02x:%02x:%02x",MAC_ADDR_ARRAY(pMacAddress));
     status = wlan_ftm_postmsg((v_U8_t*)pMsgBuf,pMsgBuf->msgBodyLength);
 
     if (status != VOS_STATUS_SUCCESS)
@@ -4552,68 +4252,43 @@ done:
 static int iw_ftm_setchar_getnone(struct net_device *dev, struct iw_request_info *info,
                        union iwreq_data *wrqu, char *extra)
 {
-    int ret,sub_cmd;
-    unsigned int length;
+    int sub_cmd = wrqu->data.flags;
+    int ret = 0; /* success */
     VOS_STATUS status;
-    hdd_adapter_t *pAdapter;
+    hdd_adapter_t *pAdapter = (netdev_priv(dev));
 
-    ret =0;
-    length = wrqu->data.length;
-    sub_cmd = wrqu->data.flags;
-    pAdapter = (hdd_adapter_t *)netdev_priv(dev);
-
-    /*we can only accept input length bytes at most less than 512,
-     *and ensure extra is null delimited string
-     */
-    if (length>=512)
-    {
-       VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
-              "%s: Received command out of bound %s", __func__, extra);
-       return -EINVAL;
-    }
-
-    extra[length] = 0;
-
-    VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
-              "%s: Received length %d", __func__, length);
-
-    VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
-              "%s: Received data %s", __func__, extra);
+    VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "%s: Received length %d", __func__, wrqu->data.length);
+    VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "%s: Received data %s", __func__, (char*)wrqu->data.pointer);
 
     switch(sub_cmd)
     {
        case WE_SET_MAC_ADDRESS:
        {
 
-          VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO,
-                    "SET MAC ADDRESS\n");
+          VOS_TRACE(VOS_MODULE_ID_HDD, VOS_TRACE_LEVEL_INFO, "SET MAC ADDRESS\n");
 
-          status  = wlan_ftm_priv_set_mac_address(pAdapter,extra);
+          status  = wlan_ftm_priv_set_mac_address(pAdapter,(char*)wrqu->data.pointer);
 
           if(status != VOS_STATUS_SUCCESS)
           {
-             hddLog(VOS_TRACE_LEVEL_FATAL,
-                    "wlan_ftm_priv_set_mac_address Failed =%d\n",status);
-
+             hddLog(VOS_TRACE_LEVEL_FATAL,"wlan_ftm_priv_set_mac_address Failed =%d\n",status);
              ret = -EINVAL;
           }
 
-          break;
        }
+       break;
        case WE_SET_TX_RATE:
        {
-            status  = wlan_ftm_priv_set_txrate(pAdapter,extra);
+            status  = wlan_ftm_priv_set_txrate(pAdapter,(char*)wrqu->data.pointer);
 
             if(status != VOS_STATUS_SUCCESS)
             {
-               hddLog(VOS_TRACE_LEVEL_FATAL,
-                      "wlan_ftm_priv_set_txrate Failed =%d\n",status);
-
-                ret = -EINVAL;
+               hddLog(VOS_TRACE_LEVEL_FATAL,"wlan_ftm_priv_set_txrate Failed =%d\n",status);
+               ret = -EINVAL;
             }
 
             break;
-       }
+        }
        default:
        {
            hddLog(LOGE, "%s: Invalid sub command %d\n",__func__, sub_cmd);

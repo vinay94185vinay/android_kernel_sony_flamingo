@@ -320,18 +320,16 @@ void pmmExitBmpsRequestHandler(tpAniSirGlobal pMac, tpExitBmpsInfo pExitBmpsInfo
 
     tPmmState origState = pMac->pmm.gPmmState;
 
+#ifdef FEATURE_WLAN_DIAG_SUPPORT 
+    limDiagEventReport(pMac, WLAN_PE_DIAG_EXIT_BMPS_REQ_EVENT, peGetValidPowerSaveSession(pMac), 0, (tANI_U16)pExitBmpsInfo->exitBmpsReason);
+#endif //FEATURE_WLAN_DIAG_SUPPORT
+
     if (NULL == pExitBmpsInfo)
     {
         respStatus = eSIR_SME_BMPS_REQ_REJECT;
         PELOGW(pmmLog(pMac, LOGW, FL("pmmBmps: Rcvd EXIT_BMPS with NULL body"));)
         goto failure;
     }
-
-#ifdef FEATURE_WLAN_DIAG_SUPPORT
-    limDiagEventReport(pMac, WLAN_PE_DIAG_EXIT_BMPS_REQ_EVENT,
-                       peGetValidPowerSaveSession(pMac), 0,
-                       (tANI_U16)pExitBmpsInfo->exitBmpsReason);
-#endif //FEATURE_WLAN_DIAG_SUPPORT
 
     /* PMC is not aware of Background scan, which is done in
      * BMPS mode while Nth Beacon is delivered. Essentially, PMC
@@ -1465,17 +1463,7 @@ void pmmEnterImpsRequestHandler (tpAniSirGlobal pMac)
     /*Returns True even single active session present */
     if(peIsAnySessionActive(pMac))
     {
-        /* Print active pesession and tracedump once in every 16
-         * continous error.
-         */
-        if (!(pMac->pmc.ImpsReqFailCnt & 0xF))
-        {
-            pePrintActiveSession(pMac);
-            macTraceDumpAll(pMac,0,0,100);
-        }
         resultCode = eSIR_SME_INVALID_STATE;
-        pmmLog(pMac, LOGE, FL("Session is active go to failure resultCode = "
-               "eSIR_SME_INVALID_STATE (%d)"),resultCode);
         goto failure;
     }
 
@@ -2595,19 +2583,19 @@ tSirRetStatus pmmUapsdSendChangePwrSaveMsg (tpAniSirGlobal pMac, tANI_U8 mode)
         pUapsdParams->voTriggerEnabled = LIM_UAPSD_GET(ACVO, uapsdTriggerMask);
         pUapsdParams->bssIdx = pSessionEntry->bssIdx;
 
-        PELOGW(pmmLog(pMac, LOGW,
+        PELOGE(pmmLog(pMac, LOGE, 
                       FL("UAPSD Mask:  static = 0x%x, DeliveryEnabled = 0x%x, TriggerEnabled = 0x%x "),
             pMac->lim.gUapsdPerAcBitmask,
             pMac->lim.gUapsdPerAcDeliveryEnableMask,
             pMac->lim.gUapsdPerAcTriggerEnableMask);)
 
-        PELOGW(pmmLog(pMac, LOGW, FL("Delivery Enabled: BK=%d, BE=%d, Vi=%d, Vo=%d "),
+        PELOG1(pmmLog(pMac, LOG1, FL("Delivery Enabled: BK=%d, BE=%d, Vi=%d, Vo=%d "),
             pUapsdParams->bkDeliveryEnabled, 
             pUapsdParams->beDeliveryEnabled, 
             pUapsdParams->viDeliveryEnabled, 
             pUapsdParams->voDeliveryEnabled);)
 
-        PELOGW(pmmLog(pMac, LOGW, FL("Trigger Enabled: BK=%d, BE=%d, Vi=%d, Vo=%d "),
+        PELOG1(pmmLog(pMac, LOG1, FL("Trigger Enabled: BK=%d, BE=%d, Vi=%d, Vo=%d "),
             pUapsdParams->bkTriggerEnabled, 
             pUapsdParams->beTriggerEnabled, 
             pUapsdParams->viTriggerEnabled, 

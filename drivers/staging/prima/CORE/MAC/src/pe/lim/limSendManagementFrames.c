@@ -67,6 +67,9 @@
 #include "rrmApi.h"
 #endif
 
+#ifdef FEATURE_WLAN_CCX
+#include <limCcxparserApi.h>
+#endif
 #include "wlan_qct_wda.h"
 #ifdef WLAN_FEATURE_11W
 #include "dot11fdefs.h"
@@ -632,7 +635,7 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
 #ifdef WLAN_FEATURE_11AC
     if(psessionEntry->vhtCapability)
     {
-        limLog( pMac, LOG1, FL("Populate VHT IE in Probe Response"));
+        limLog( pMac, LOGW, FL("Populate VHT IE in Probe Response"));
         PopulateDot11fVHTCaps( pMac, &pFrm->VHTCaps );
         PopulateDot11fVHTOperation( pMac, &pFrm->VHTOperation );
         // we do not support multi users yet
@@ -640,18 +643,6 @@ limSendProbeRspMgmtFrame(tpAniSirGlobal pMac,
         PopulateDot11fExtCap( pMac, &pFrm->ExtCap);
     }
 #endif
-
-    if (psessionEntry->oxygenNwkIniFeatureEnabled &&
-       (eLIM_STA_IN_IBSS_ROLE == psessionEntry->limSystemRole)) {
-        if (wlan_cfgGetInt(pMac, WNI_CFG_OXYGEN_NETWORK_DATA,
-                                     &tmp) != eSIR_SUCCESS){
-            limLog(pMac, LOGW, FL("Unable to get WNI_CFG_OXYGEN_NETWORK_DATA"));
-        }
-        else {
-            pFrm->OxygenNetwork.present = 1;
-            pFrm->OxygenNetwork.data = (tmp & 0xffff);
-        }
-    }
 
     if ( psessionEntry->pLimStartBssReq ) 
     {
@@ -1332,7 +1323,7 @@ limSendAssocRspMgmtFrame(tpAniSirGlobal pMac,
         if( pSta->mlmStaContext.vhtCapability && 
             psessionEntry->vhtCapability )
         {
-            limLog( pMac, LOG1, FL("Populate VHT IEs in Assoc Response"));
+            limLog( pMac, LOGW, FL("Populate VHT IEs in Assoc Response"));
             PopulateDot11fVHTCaps( pMac, &frm.VHTCaps );
             PopulateDot11fVHTOperation( pMac, &frm.VHTOperation);
             PopulateDot11fExtCap( pMac, &frm.ExtCap);
@@ -2189,6 +2180,12 @@ limSendAssocReqMgmtFrame(tpAniSirGlobal   pMac,
 #endif
 
 #ifdef FEATURE_WLAN_CCX
+    /* CCX Version IE will be included in association request
+       when CCX is enabled on DUT through ini */
+    if (psessionEntry->pLimJoinReq->isCCXFeatureIniEnabled)
+    {
+        PopulateDot11fCCXVersion(&pFrm->CCXVersion);
+    }
     /* For CCX Associations fill the CCX IEs */
     if (psessionEntry->isCCXconnection &&
         psessionEntry->pLimJoinReq->isCCXFeatureIniEnabled)
@@ -2196,7 +2193,6 @@ limSendAssocReqMgmtFrame(tpAniSirGlobal   pMac,
 #ifndef FEATURE_DISABLE_RM
         PopulateDot11fCCXRadMgmtCap(&pFrm->CCXRadMgmtCap);
 #endif
-        PopulateDot11fCCXVersion(&pFrm->CCXVersion);
     }
 #endif
 
@@ -2342,7 +2338,6 @@ limSendAssocReqMgmtFrame(tpAniSirGlobal   pMac,
 
     // Free up buffer allocated for mlmAssocReq
     vos_mem_free(pMlmAssocReq);
-    pMlmAssocReq = NULL;
     vos_mem_free(pFrm);
     return;
 } // End limSendAssocReqMgmtFrame
@@ -2521,6 +2516,12 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
     }
 
 #ifdef FEATURE_WLAN_CCX
+    /* CCX Version IE will be included in reassociation request
+       when CCX is enabled on DUT through ini */
+    if (psessionEntry->pLimReAssocReq->isCCXFeatureIniEnabled)
+    {
+        PopulateDot11fCCXVersion(&frm.CCXVersion);
+    }
     // For CCX Associations fill the CCX IEs
     if (psessionEntry->isCCXconnection &&
         psessionEntry->pLimReAssocReq->isCCXFeatureIniEnabled)
@@ -2528,7 +2529,6 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
 #ifndef FEATURE_DISABLE_RM
         PopulateDot11fCCXRadMgmtCap(&frm.CCXRadMgmtCap);
 #endif
-        PopulateDot11fCCXVersion(&frm.CCXVersion);
     }
 #endif //FEATURE_WLAN_CCX
 #endif //FEATURE_WLAN_CCX || FEATURE_WLAN_LFR
@@ -2587,16 +2587,6 @@ limSendReassocReqWithFTIEsMgmtFrame(tpAniSirGlobal     pMac,
        )
     {
         PopulateMDIE( pMac, &frm.MobilityDomain, psessionEntry->pLimReAssocReq->bssDescription.mdie);
-    }
-#endif
-
-#ifdef WLAN_FEATURE_11AC
-    if ( psessionEntry->vhtCapability &&
-             psessionEntry->vhtCapabilityPresentInBeacon)
-    {
-        limLog( pMac, LOG1, FL("Populate VHT IEs in Re-Assoc Request"));
-        PopulateDot11fVHTCaps( pMac, &frm.VHTCaps );
-        PopulateDot11fExtCap( pMac, &frm.ExtCap);
     }
 #endif
 
@@ -3007,7 +2997,7 @@ limSendReassocReqMgmtFrame(tpAniSirGlobal     pMac,
     if ( psessionEntry->vhtCapability &&
              psessionEntry->vhtCapabilityPresentInBeacon)
     {
-        limLog( pMac, LOG1, FL("Populate VHT IEs in Re-Assoc Request"));
+        limLog( pMac, LOGW, FL("Populate VHT IEs in Re-Assoc Request"));
         PopulateDot11fVHTCaps( pMac, &frm.VHTCaps );
         PopulateDot11fExtCap( pMac, &frm.ExtCap);
     }
@@ -3360,7 +3350,9 @@ limSendAuthMgmtFrame(tpAniSirGlobal pMac,
         *((tANI_U16 *)(pBody)) = sirSwapU16ifNeeded(pAuthFrameBody->authStatusCode);
         pBody   += sizeof(tANI_U16);
         bodyLen -= sizeof(tANI_U16);
-        if ( bodyLen < sizeof (pAuthFrameBody->type) + sizeof (pAuthFrameBody->length) + sizeof (pAuthFrameBody->challengeText))
+        if ( bodyLen <= (sizeof (pAuthFrameBody->type) +
+                         sizeof (pAuthFrameBody->length) +
+                         sizeof (pAuthFrameBody->challengeText)))
             vos_mem_copy(pBody, (tANI_U8 *) &pAuthFrameBody->type, bodyLen);
 
 #if defined WLAN_FEATURE_VOWIFI_11R
